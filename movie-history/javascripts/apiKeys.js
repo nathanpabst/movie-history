@@ -22,4 +22,6 @@ const retrieveKeys = () => {
     });
 };
 
-module.exports = retrieveKeys;
+module.exports = {
+  retrieveKeys,
+};
