@@ -9,6 +9,11 @@ const setKey = (key) => {
   tmdbKey = key;
   getConfig();
 };
+
+const getImageConfig = () => {
+  return imageConfig;
+};
+
 // TO DISPLAY POSTERS
 const getConfig = () => {
   tmdbConfiguration()
@@ -48,7 +53,7 @@ const searchTMDB = (txt) => {
 const showResults = (searchText) => {
   searchTMDB(searchText)
     .then((result) => {
-      dom.domString(result, imageConfig);
+      dom.domString(result, imageConfig, 'movies');
     })
     .catch((err) => {
       console.error('search error', err);
@@ -57,5 +62,6 @@ const showResults = (searchText) => {
 
 module.exports = {
   showResults,
+  getImageConfig,
   setKey,
 };
