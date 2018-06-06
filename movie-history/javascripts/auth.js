@@ -1,11 +1,13 @@
 const {getAllMoviesEvent,} = require('./events');
+const {setUID,} = require('./firebaseApi');
 
 const checkLoginStatus = () => {
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       // User is signed in.
+      setUID(user.uid);
       $('#myMovies').removeClass('hide');
-      $('#search').addClass('hide');
+      $('#search').removeClass('hide');
       $('#authScreen').addClass('hide');
       $('#navSearch').removeClass('hide');
       $('#mine').removeClass('hide');
