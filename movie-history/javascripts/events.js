@@ -138,6 +138,8 @@ const authEvents = () => {
     const pass = $('#inputPassword').val();
     firebase.auth().signInWithEmailAndPassword(email, pass)
       .catch((error) => {
+        $('#signInErrorMsg').text(error.message);
+        $('#signInError').removeClass('hide');
         const errorMessage = error.message;
         console.error(errorMessage);
       });
@@ -148,6 +150,8 @@ const authEvents = () => {
     const pass = $('#registerPassword').val();
     firebase.auth().createUserWithEmailAndPassword(email, pass)
       .catch((error) => {
+        $('#registrationErrorMsg').text(error.message);
+        $('#registrationError').removeClass('hide');
         const errorMessage = error.message;
         console.error(errorMessage);
       });
