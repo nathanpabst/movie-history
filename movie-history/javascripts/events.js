@@ -145,7 +145,7 @@ const authEvents = () => {
       });
   });
 
-  $('registerLink').click(() => {
+  $('#registerBtn').click(() => {
     const email = $('#registerEmail').val();
     const pass = $('#registerPassword').val();
     firebase.auth().createUserWithEmailAndPassword(email, pass)
