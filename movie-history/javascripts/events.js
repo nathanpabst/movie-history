@@ -161,7 +161,7 @@ const authEvents = () => {
     $('#loginForm').addClass('hide');
     $('#registrationForm').removeClass('hide');
   });
-  $('#SignInLink').click(() => {
+  $('#signInBtn').click(() => {
     $('#loginForm').removeClass('hide');
     $('#registrationForm').addClass('hide');
   });
